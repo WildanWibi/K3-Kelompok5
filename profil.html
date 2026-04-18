@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil &amp; Maps — Portal K3 PT AMURAWIL Energi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── PROFIL PAGE EXTRAS ── */
+
+        /* Wilayah operasi cards */
+        .wilayah-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .wilayah-card {
+            background: var(--surface);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+            border-left: 4px solid var(--navy-light);
+            position: relative;
+            overflow: hidden;
+        }
+        .wilayah-card::after {
+            content: '';
+            position: absolute;
+            bottom: -16px; right: -16px;
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            background: rgba(29,80,150,.06);
+        }
+        .wilayah-card.offshore { border-left-color: var(--blue); }
+        .wilayah-card.onshore  { border-left-color: var(--gold); }
+        .wilayah-type {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+        .wilayah-card.offshore .wilayah-type { color: var(--blue); }
+        .wilayah-card.onshore  .wilayah-type { color: var(--gold); }
+        .wilayah-name {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+        .wilayah-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Denah / Map container */
+        .denah-wrap {
+            background: linear-gradient(135deg, #D6E8F5 0%, #C2D9EE 100%);
+            border: 2px dashed rgba(29,111,164,.3);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+        }
+        .denah-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-lg);
+        }
+        .denah-wrap.empty {
+            padding: 3rem 2rem;
+        }
+        .denah-icon {
+            width: 56px; height: 56px;
+            background: rgba(29,111,164,.15);
+            border: 1.5px solid rgba(29,111,164,.3);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .denah-label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--blue);
+        }
+        .denah-sub {
+            font-size: 0.75rem;
+            color: rgba(29,111,164,.65);
+        }
+
+        /* Komitmen highlight box */
+        .komitmen-highlight {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+        .kom-item {
+            background: var(--surface);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius);
+            padding: 1rem 1rem 1rem 1.2rem;
+            border-left: 3px solid var(--gold);
+            font-size: 0.85rem;
+        }
+        .kom-item .kom-icon {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .kom-item .kom-title {
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 3px;
+            font-size: 0.88rem;
+        }
+        .kom-item .kom-desc {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+
+        @media (max-width: 720px) {
+            .wilayah-grid, .komitmen-highlight { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+    <a class="logo-block" href="index.html">
+        <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#0C2340"/>
+                <path d="M10 17l-4-4 1.4-1.4L10 14.2l6.6-6.6L18 9l-8 8z" fill="#0C2340"/>
+            </svg>
+        </div>
+        <div class="logo-text">
+            <div class="brand">PT AMURAWIL Energi</div>
+            <div class="sub">Portal K3 Terintegrasi</div>
+        </div>
+    </a>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="profil.html" class="active">Profil &amp; Maps</a>
+        <a href="safety.html">Safety &amp; Health</a>
+        <a href="legal.html">Legalitas</a>
+        <a href="reporting.html">Incident Reporting</a>
+    </nav>
+</header>
+
+<!-- ── HERO ── -->
+<div class="page-hero">
+    <div class="hero-label">Tentang Perusahaan</div>
+    <h2>Profil PT AMURAWIL Energi<br>&amp; Denah Lokasi Operasi</h2>
+    <p>Beroperasi sejak 2006 pada sektor hulu minyak dan gas bumi di dua wilayah operasional strategis Indonesia.</p>
+</div>
+
+<!-- ── CONTENT ── -->
+<div class="content">
+
+    <!-- Informasi Perusahaan -->
+    <div class="card">
+        <h3>Informasi Perusahaan</h3>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="key">Didirikan</div>
+                <div class="val">2006</div>
+            </div>
+            <div class="info-item">
+                <div class="key">Sektor</div>
+                <div class="val">Hulu Minyak &amp; Gas Bumi</div>
+            </div>
+            <div class="info-item">
+                <div class="key">Operasi Offshore</div>
+                <div class="val">Laut Natuna</div>
+            </div>
+            <div class="info-item">
+                <div class="key">Operasi Onshore</div>
+                <div class="val">Kalimantan Timur</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wilayah Operasional -->
+    <div class="card">
+        <h3>Wilayah Operasional</h3>
+        <div class="wilayah-grid">
+            <div class="wilayah-card offshore">
+                <div class="wilayah-type">Offshore — Lepas Pantai</div>
+                <div class="wilayah-name">Blok Laut Natuna</div>
+                <div class="wilayah-desc">Eksplorasi dan produksi laut dalam dengan sistem pengeboran bertekanan tinggi dan standar keselamatan maritim internasional.</div>
+            </div>
+            <div class="wilayah-card onshore">
+                <div class="wilayah-type">Onshore — Darat</div>
+                <div class="wilayah-name">Kilang Kalimantan Timur</div>
+                <div class="wilayah-desc">Pemrosesan, penyimpanan, dan distribusi gas bumi dengan infrastruktur pipeline dan sistem deteksi kebocoran otomatis.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Denah -->
+    <div class="card">
+        <h3>Denah PT AMURAWIL Energi</h3>
+
+        <!-- Jika file SVG tersedia, tampilkan gambar; jika tidak, tampilkan placeholder -->
+        <div class="denah-wrap" id="denahWrap">
+            <!-- Gambar akan ditampilkan jika file ada -->
+            <img
+                src="assets/1.svg"
+                alt="Denah PT AMURAWIL Energi"
+                id="denahImg"
+                onerror="this.closest('.denah-wrap').classList.add('empty'); this.style.display='none'; document.getElementById('denahFallback').style.display='flex';"
+            >
+            <!-- Fallback jika gambar tidak ditemukan -->
+            <div id="denahFallback" style="display:none; flex-direction:column; align-items:center; gap:12px;">
+                <div class="denah-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#1D6FA4"/>
+                    </svg>
+                </div>
+                <div class="denah-label">Embed Google Maps</div>
+                <div class="denah-sub">Lokasi PT AMURAWIL Energi</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Komitmen -->
+    <div class="card">
+        <h3>Komitmen Perusahaan</h3>
+        <p style="line-height:1.8; color:var(--text-muted);">
+            Mengingat operasi laut dalam dan pemrosesan gas memiliki tingkat risiko bahaya yang sangat tinggi,
+            PT AMURAWIL Energi berkomitmen untuk menciptakan lingkungan operasional yang
+            <strong style="color:var(--navy);">aman, sehat, dan berwawasan lingkungan</strong> di setiap lini kerja.
+        </p>
+        <div class="komitmen-highlight">
+            <div class="kom-item">
+                <span class="kom-icon">🛡️</span>
+                <div class="kom-title">Keselamatan Kerja</div>
+                <div class="kom-desc">Standar K3 ketat diterapkan di seluruh area operasional darat dan laut.</div>
+            </div>
+            <div class="kom-item">
+                <span class="kom-icon">🌿</span>
+                <div class="kom-title">Wawasan Lingkungan</div>
+                <div class="kom-desc">Operasi ramah lingkungan dengan pemantauan emisi dan limbah berkelanjutan.</div>
+            </div>
+            <div class="kom-item">
+                <span class="kom-icon">❤️</span>
+                <div class="kom-title">Kesehatan Karyawan</div>
+                <div class="kom-desc">Program kesehatan kerja komprehensif untuk seluruh tenaga kerja dan mitra.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <p>&copy; 2025 <strong>PT AMURAWIL Energi</strong> — Sistem Informasi K3 Terintegrasi. Hak Cipta Dilindungi.</p>
+</footer>
+
+</body>
+</html>
