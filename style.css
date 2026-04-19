@@ -108,10 +108,14 @@ nav a.active {
 
 /* ── PAGE HERO ── */
 .page-hero {
-  background: linear-gradient(130deg, var(--navy) 0%, var(--navy-mid) 55%, #1A4A8A 100%);
-  padding: 3rem 2.5rem 2.75rem;
-  position: relative; overflow: hidden;
+  /* Kita gabungkan gradient gelap transparan dengan URL gambarnya */
+  background: linear-gradient(130deg, rgba(12, 35, 64, 0.85) 0%, rgba(22, 58, 107, 0.75) 100%),
+              url('assets/3.jpeg') center/cover no-repeat;
+  padding: 4rem 2.5rem 3.5rem; /* Padding agak dibesarkan biar gambarnya makin terekspos */
+  position: relative; 
+  overflow: hidden;
 }
+
 .page-hero::before {
   content: '';
   position: absolute; inset: 0;
@@ -232,6 +236,50 @@ nav a.active {
 @keyframes pulse {
   0%,100% { box-shadow: 0 0 0 3px rgba(22,163,74,.2); }
   50%      { box-shadow: 0 0 0 6px rgba(22,163,74,.08); }
+}
+
+/* ── TEAM GRID ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+.team-item {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.team-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  background: var(--white);
+  border-color: var(--blue);
+}
+.member-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+.member-role {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.member-id {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; }
 }
 
 /* ── QUICK ACCESS ── */
@@ -422,28 +470,197 @@ nav a.active {
 }
 .toast.show { display: block; }
 
-/* ── FOOTER ── */
+/* ── FOOTER MODERN ── */
 footer {
   background: var(--navy);
-  color: rgba(255,255,255,.45);
-  text-align: center; padding: 1.4rem;
-  font-size: 0.8rem; border-top: 3px solid var(--gold);
+  color: #fff;
+  padding: 3rem 2rem 1.5rem;
+  border-top: 4px solid var(--gold);
+  margin-top: 4rem;
+  width: 100%; /* <-- Pastikan ada ini */
+  box-sizing: border-box; /* <-- Dan ini */
 }
-footer strong { color: #FCD34D; }
 
-/* ── UTILITIES ── */
-ul.list { padding-left: 1.4rem; line-height: 1.95; color: var(--text-muted); }
-ul.list li strong { color: var(--text); }
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
 
-/* ── RESPONSIVE ── */
+.footer-brand .f-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+.footer-links h4, .footer-contact h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+  color: #fff;
+  border-left: 3px solid var(--gold);
+  padding-left: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+
+.footer-links ul li a:hover {
+  color: var(--gold);
+}
+
+.footer-contact p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-credit {
+  margin-top: 5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.2) !important;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+  }
+  .footer-links h4, .footer-contact h4 {
+      border-left: none;
+      padding-left: 0;
+  }
+}
+
+/* ── PROFIL PAGE EXTRAS ── */
+.wilayah-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.wilayah-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--navy-light);
+  position: relative;
+  overflow: hidden;
+}
+.wilayah-card.offshore { border-left-color: var(--blue); }
+.wilayah-card.onshore  { border-left-color: var(--gold); }
+
+.wilayah-type {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.wilayah-card.offshore .wilayah-type { color: var(--blue); }
+.wilayah-card.onshore  .wilayah-type { color: var(--gold); }
+
+.wilayah-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.wilayah-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.denah-wrap {
+  background: linear-gradient(135deg, #D6E8F5 0%, #C2D9EE 100%);
+  border: 2px dashed rgba(29,111,164,.3);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+}
+.denah-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+.komitmen-highlight {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.kom-item {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--gold);
+}
+.kom-item .kom-title {
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 3px;
+  font-size: 0.88rem;
+}
+.kom-item .kom-desc {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
 @media (max-width: 720px) {
-  header { padding: 0 1rem; }
-  nav a { font-size: 0.72rem; padding: 6px 8px; }
-  .logo-text .sub { display: none; }
-  .stat-grid, .apd-grid, .info-grid, .form-grid, .quick-grid { grid-template-columns: 1fr; }
-  .form-grid .full { grid-column: 1; }
-  .content { padding: 1.5rem 1rem; }
-  .page-hero { padding: 2rem 1rem 1.75rem; }
-  .page-hero h2 { font-size: 1.8rem; }
-  .card { padding: 1.25rem; }
+  .wilayah-grid, .komitmen-highlight { grid-template-columns: 1fr; }
 }
