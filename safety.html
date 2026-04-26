@@ -35,19 +35,17 @@
 </div>
 
 <div class="content">
+
+    <!-- VIDEO -->
     <div class="card" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; box-shadow: var(--shadow-md);">
-        <iframe 
-            width="100%" 
-            height="450" 
-            src="https://www.youtube.com/embed/1LUAF7H-WTc" 
-            title="Video Panduan K3" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen 
-            style="display: block;">
-        </iframe>
+        <iframe width="100%" height="450"
+            src="https://www.youtube.com/embed/1LUAF7H-WTc"
+            title="Video Panduan K3" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen style="display: block;"></iframe>
     </div>
 
+    <!-- APD -->
     <div class="card">
         <h3>Standarisasi APD Umum</h3>
         <div class="apd-grid">
@@ -78,46 +76,318 @@
         </div>
     </div>
 
-    <div class="card">
-        <h3>Analisis Risiko &amp; Pencegahan</h3>
-        <div class="table-wrap">
-            <table class="risk-table">
-                <thead>
-                    <tr>
-                        <th>Lokasi</th>
-                        <th>Potensi Bahaya</th>
-                        <th>Pencegahan / APD Khusus</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="loc-tag">Area Produksi</span></td>
-                        <td>Terjepit mesin, kebisingan, terpeleset</td>
-                        <td>Earplug/Earmuff, Housekeeping rutin</td>
-                    </tr>
-                    <tr>
-                        <td><span class="loc-tag">Tangki Gas</span></td>
-                        <td>Ledakan, kebakaran, paparan gas H₂S</td>
-                        <td>Masker Respirator / SCBA, APAR, Detektor Gas</td>
-                    </tr>
-                    <tr>
-                        <td><span class="loc-tag">Laboratorium</span></td>
-                        <td>Keracunan bahan kimia, iritasi</td>
-                        <td>Jas Lab, Sarung Tangan Kimia, Goggles</td>
-                    </tr>
-                    <tr>
-                        <td><span class="loc-tag">Poliklinik (P3K)</span></td>
-                        <td>Penularan penyakit, limbah medis</td>
-                        <td>Masker Medis, Sarung Tangan Lateks, APD Level 2</td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <div class="section-divider-label">Analisis Risiko &amp; Pencegahan</div>
+        <div class="section-divider-line"></div>
+    </div>
+    <p class="risk-intro">Setiap area operasional PT AMURAWIL Energi memiliki profil risiko yang berbeda. Berikut adalah penjabaran detail potensi bahaya beserta langkah pencegahan dan APD wajib yang harus dipenuhi di masing-masing lokasi.</p>
+
+    <!-- RISK CARD 1: AREA PRODUKSI -->
+    <div class="risk-card">
+        <div class="risk-card-header prod">
+            <div class="risk-loc-badge">
+                <svg class="rc-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="14" height="9" rx="1.5"/><path d="M7 8V6a3 3 0 016 0v2"/><circle cx="10" cy="13" r="1.5" fill="currentColor" stroke="none"/></svg>
+                Area Produksi
+            </div>
+            <div class="risk-level high">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zM8 4a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 4z"/></svg>
+                Risiko Tinggi
+            </div>
+        </div>
+        <div class="risk-card-body">
+            <div class="risk-col">
+                <div class="risk-section-title danger">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                    Potensi Bahaya
+                </div>
+                <div class="risk-hazard-list">
+                    <div class="hazard-item">
+                        <span class="hazard-dot red"></span>
+                        <div>
+                            <strong>Terjepit Mesin &amp; Peralatan Bergerak</strong>
+                            <p>Bagian tubuh (tangan, jari, rambut) dapat tersangkut pada mesin berputar, conveyor, atau gear yang tidak dilengkapi pelindung (guarding). Risiko ini menyebabkan cedera serius hingga amputasi.</p>
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <span class="hazard-dot orange"></span>
+                        <div>
+                            <strong>Paparan Kebisingan Berlebih (&gt;85 dB)</strong>
+                            <p>Mesin kompresor, pompa tekanan tinggi, dan turbin menghasilkan kebisingan melebihi ambang batas aman. Paparan jangka panjang menyebabkan Noise-Induced Hearing Loss (NIHL) yang bersifat permanen.</p>
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <span class="hazard-dot yellow"></span>
+                        <div>
+                            <strong>Terpeleset, Tersandung &amp; Terjatuh</strong>
+                            <p>Lantai licin akibat tumpahan minyak atau air, permukaan tidak rata, dan pencahayaan kurang memadai merupakan penyebab utama kecelakaan kerja di area produksi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="risk-col">
+                <div class="risk-section-title safe">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+                    Pencegahan &amp; APD Khusus
+                </div>
+                <div class="prevention-list">
+                    <div class="prevention-item">
+                        <span class="prev-num">01</span>
+                        <div><strong>Machine Guarding</strong> — Semua bagian mesin bergerak wajib dilengkapi pelindung (guard) sesuai standar ISO 14120. Penguncian energi (LOTO) wajib diterapkan saat maintenance.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">02</span>
+                        <div><strong>Earplug / Earmuff</strong> — Wajib digunakan di area dengan kebisingan &ge;85 dB. Pemeriksaan audiometri dilakukan setiap 6 bulan untuk seluruh pekerja area produksi.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">03</span>
+                        <div><strong>Housekeeping Rutin (5S)</strong> — Program 5S (Seiri, Seiton, Seiso, Seiketsu, Shitsuke) diterapkan harian. Pemasangan anti-slip mat dan rambu peringatan di area rawan terpeleset.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">04</span>
+                        <div><strong>Inspeksi Harian</strong> — Safety walk dilakukan setiap shift untuk memastikan kondisi area bersih, jalur evakuasi bebas hambatan, dan seluruh guarding terpasang dengan benar.</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- RISK CARD 2: TANGKI GAS -->
+    <div class="risk-card">
+        <div class="risk-card-header gas">
+            <div class="risk-loc-badge">
+                <svg class="rc-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="10" cy="7" rx="6" ry="4"/><path d="M4 7v6c0 2.21 2.686 4 6 4s6-1.79 6-4V7"/></svg>
+                Tangki Gas
+            </div>
+            <div class="risk-level critical">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M7.938 2.016A.13.13 0 018.002 2a.13.13 0 01.063.016.146.146 0 01.054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 01-.054.06.116.116 0 01-.066.017H1.146a.115.115 0 01-.066-.017.163.163 0 01-.054-.06.176.176 0 01.002-.183L7.884 2.073a.147.147 0 01.054-.057zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z"/></svg>
+                Risiko Kritis
+            </div>
+        </div>
+        <div class="risk-card-body">
+            <div class="risk-col">
+                <div class="risk-section-title danger">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                    Potensi Bahaya
+                </div>
+                <div class="risk-hazard-list">
+                    <div class="hazard-item">
+                        <span class="hazard-dot red"></span>
+                        <div>
+                            <strong>Ledakan &amp; Kebakaran (BLEVE)</strong>
+                            <p>Boiling Liquid Expanding Vapor Explosion (BLEVE) dapat terjadi akibat kegagalan tangki bertekanan tinggi. Energi yang dilepaskan sangat masif dan berpotensi menyebabkan korban jiwa serta kerusakan fasilitas dalam radius luas.</p>
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <span class="hazard-dot red"></span>
+                        <div>
+                            <strong>Paparan Gas H&#8322;S (Hidrogen Sulfida)</strong>
+                            <p>Gas H&#8322;S bersifat sangat toksik, tidak berwarna, dan berbau telur busuk pada konsentrasi rendah. Pada konsentrasi &gt;100 ppm dapat menyebabkan kehilangan kesadaran mendadak (knockdown) dan kematian dalam hitungan menit.</p>
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <span class="hazard-dot orange"></span>
+                        <div>
+                            <strong>Kebocoran Gas &amp; Flash Fire</strong>
+                            <p>Kebocoran pada fitting, flange, atau valve dapat membentuk awan gas yang mudah terbakar. Sumber percikan sekecil apapun (gesekan, listrik statis) dapat memicu flash fire yang menjalar dengan cepat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="risk-col">
+                <div class="risk-section-title safe">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+                    Pencegahan &amp; APD Khusus
+                </div>
+                <div class="prevention-list">
+                    <div class="prevention-item">
+                        <span class="prev-num">01</span>
+                        <div><strong>SCBA (Self-Contained Breathing Apparatus)</strong> — Wajib digunakan saat memasuki area confined space atau area dengan potensi H&#8322;S. Tabung udara harus terisi penuh dan dikalibrasi sebelum digunakan.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">02</span>
+                        <div><strong>Detektor Gas Portabel &amp; Stasioner</strong> — Pemantauan kadar H&#8322;S dan gas hidrokarbon secara real-time dengan alarm otomatis pada ambang 10 ppm (H&#8322;S). Kalibrasi detektor dilakukan setiap bulan.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">03</span>
+                        <div><strong>APAR &amp; Sistem Sprinkler Otomatis</strong> — APAR jenis CO&#8322; dan Dry Chemical ditempatkan setiap 15 meter. Sistem deluge sprinkler aktif otomatis pada suhu 68&deg;C untuk mencegah BLEVE.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">04</span>
+                        <div><strong>Izin Kerja Panas (Hot Work Permit)</strong> — Setiap pekerjaan yang menghasilkan percikan api wajib memiliki izin kerja panas yang disetujui HSE Manager. Area harus bebas gas sebelum pekerjaan dimulai.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RISK CARD 3: LABORATORIUM -->
+    <div class="risk-card">
+        <div class="risk-card-header lab">
+            <div class="risk-loc-badge">
+                <svg class="rc-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3v6.5L3.5 16h13L13 9.5V3"/><path d="M6 3h8"/></svg>
+                Laboratorium
+            </div>
+            <div class="risk-level medium">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 118 0a8 8 0 010 16z"/><path d="M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z"/></svg>
+                Risiko Sedang
+            </div>
+        </div>
+        <div class="risk-card-body">
+            <div class="risk-col">
+                <div class="risk-section-title danger">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                    Potensi Bahaya
+                </div>
+                <div class="risk-hazard-list">
+                    <div class="hazard-item">
+                        <span class="hazard-dot orange"></span>
+                        <div>
+                            <strong>Keracunan Bahan Kimia Berbahaya</strong>
+                            <p>Laboratorium menyimpan berbagai reagen berbahaya seperti asam kuat (H&#8322;SO&#8324;, HCl), pelarut organik (benzena, toluena), dan logam berat. Paparan melalui inhalasi, kontak kulit, atau ingesti dapat menyebabkan keracunan akut maupun kronis.</p>
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <span class="hazard-dot orange"></span>
+                        <div>
+                            <strong>Iritasi &amp; Luka Bakar Kimia</strong>
+                            <p>Percikan asam atau basa kuat pada kulit dan mata dapat menyebabkan luka bakar kimia yang serius. Uap dari pelarut volatil menyebabkan iritasi saluran pernapasan dan gangguan sistem saraf pusat.</p>
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <span class="hazard-dot yellow"></span>
+                        <div>
+                            <strong>Bahaya Kebakaran dari Pelarut Mudah Terbakar</strong>
+                            <p>Pelarut organik seperti alkohol, aseton, dan eter memiliki titik nyala sangat rendah. Penyimpanan yang tidak tepat atau paparan sumber panas dapat menyebabkan kebakaran di dalam laboratorium.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="risk-col">
+                <div class="risk-section-title safe">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+                    Pencegahan &amp; APD Khusus
+                </div>
+                <div class="prevention-list">
+                    <div class="prevention-item">
+                        <span class="prev-num">01</span>
+                        <div><strong>Jas Laboratorium (Lab Coat)</strong> — Wajib digunakan selama berada di dalam laboratorium. Terbuat dari bahan tahan percikan bahan kimia dan menutup seluruh tubuh dari leher hingga pergelangan tangan.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">02</span>
+                        <div><strong>Sarung Tangan Kimia (Chemical Gloves)</strong> — Dipilih berdasarkan jenis bahan kimia yang ditangani (nitril untuk asam, neoprene untuk pelarut). Wajib diganti jika terdapat kerusakan atau perubahan warna.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">03</span>
+                        <div><strong>Goggles / Pelindung Mata</strong> — Chemical splash goggles wajib digunakan saat menangani larutan asam, basa, atau bahan korosif lainnya untuk mencegah kontak langsung dengan mata.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">04</span>
+                        <div><strong>Fume Hood &amp; Ventilasi Memadai</strong> — Semua pekerjaan dengan bahan volatil dilakukan di dalam fume hood. Sistem ventilasi laboratorium diatur untuk 10&ndash;12 kali pergantian udara per jam.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RISK CARD 4: POLIKLINIK -->
+    <div class="risk-card">
+        <div class="risk-card-header clinic">
+            <div class="risk-loc-badge">
+                <svg class="rc-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"/><rect x="2" y="2" width="16" height="16" rx="3"/></svg>
+                Poliklinik (P3K)
+            </div>
+            <div class="risk-level medium">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 118 0a8 8 0 010 16z"/><path d="M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z"/></svg>
+                Risiko Sedang
+            </div>
+        </div>
+        <div class="risk-card-body">
+            <div class="risk-col">
+                <div class="risk-section-title danger">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                    Potensi Bahaya
+                </div>
+                <div class="risk-hazard-list">
+                    <div class="hazard-item">
+                        <span class="hazard-dot orange"></span>
+                        <div>
+                            <strong>Penularan Penyakit Infeksius</strong>
+                            <p>Tenaga medis dan pasien terpapar risiko penularan patogen melalui kontak langsung dengan cairan tubuh, tetesan pernapasan (droplet), atau aerosol. Penyakit yang umum dijumpai meliputi infeksi saluran pernapasan dan infeksi kulit.</p>
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <span class="hazard-dot orange"></span>
+                        <div>
+                            <strong>Pengelolaan Limbah Medis B3</strong>
+                            <p>Jarum suntik bekas, perban terkontaminasi, dan vial obat-obatan tergolong sebagai limbah Bahan Berbahaya dan Beracun (B3). Penanganan yang tidak tepat berisiko menyebabkan penularan penyakit dan pencemaran lingkungan.</p>
+                        </div>
+                    </div>
+                    <div class="hazard-item">
+                        <span class="hazard-dot yellow"></span>
+                        <div>
+                            <strong>Needlestick Injury (Luka Tusuk Jarum)</strong>
+                            <p>Cedera akibat tertusuk jarum suntik bekas merupakan risiko serius karena berpotensi menularkan HIV, Hepatitis B, dan Hepatitis C. Kejadian ini umumnya terjadi akibat teknik recapping jarum yang tidak benar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="risk-col">
+                <div class="risk-section-title safe">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+                    Pencegahan &amp; APD Khusus
+                </div>
+                <div class="prevention-list">
+                    <div class="prevention-item">
+                        <span class="prev-num">01</span>
+                        <div><strong>Masker Medis &amp; N95 Respirator</strong> — Masker medis bedah untuk perlindungan droplet rutin. Masker N95 wajib saat menangani pasien dengan gejala infeksi pernapasan atau prosedur aerosol-generating.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">02</span>
+                        <div><strong>Sarung Tangan Lateks / Nitril</strong> — Wajib digunakan saat melakukan tindakan medis apapun yang melibatkan kontak dengan pasien atau cairan tubuh. Diganti di antara setiap pasien untuk mencegah kontaminasi silang.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">03</span>
+                        <div><strong>APD Level 2 (Gown + Face Shield)</strong> — Wajib digunakan saat menangani pasien dengan dugaan penyakit infeksi serius. Termasuk gown medis tahan cairan, face shield, dan penutup kepala.</div>
+                    </div>
+                    <div class="prevention-item">
+                        <span class="prev-num">04</span>
+                        <div><strong>Pengelolaan Limbah Medis B3</strong> — Pemisahan limbah medis menggunakan kantong kuning (infeksius) dan sharp container untuk jarum. Pengangkutan oleh transporter B3 berizin sesuai PP 22 Tahun 2021.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <footer>
-    <p>&copy; 2025 <strong>PT AMURAWIL Energi</strong> — Sistem Informasi K3 Terintegrasi. Hak Cipta Dilindungi.</p>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <span class="f-logo">PT AMURAWIL ENERGI</span>
+            <p>Berkomitmen menyediakan energi untuk negeri dengan standar keselamatan kerja tertinggi demi tercapainya target <em>Zero Accident</em> di seluruh wilayah operasional.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Navigasi Portal</h4>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="profil.html">Profil Perusahaan</a></li>
+                <li><a href="safety.html">Safety &amp; Health</a></li>
+                <li><a href="reporting.html">Pelaporan Insiden</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Emergency Contact</h4>
+            <p>Blok Laut Natuna &amp; Kalimantan Timur</p>
+            <p>HSE Hotline: (021) 555-K3LL</p>
+            <p>safety@amurawil-energi.co.id</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 <strong>PT AMURAWIL Energi</strong> &mdash; Sistem Informasi K3 Terintegrasi. Hak Cipta Dilindungi.</p>
+        <p class="footer-credit">Kelompok 5 | D-IV Sistem Informasi Bisnis | JTI Polinema</p>
+    </div>
 </footer>
 
 </body>

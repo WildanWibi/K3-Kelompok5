@@ -186,36 +186,6 @@ nav a.active {
 }
 
 /* ── STAT GRID ── */
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem; margin-bottom: 1.5rem;
-}
-.stat-card {
-  background: var(--white);
-  border: 1px solid var(--border-soft);
-  border-top: 3px solid var(--gold);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem 1.25rem 1.25rem;
-  text-align: center; box-shadow: var(--shadow-sm);
-  transition: transform .2s, box-shadow .2s;
-}
-.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.stat-card .num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 2.4rem; font-weight: 800;
-  color: var(--navy); line-height: 1;
-}
-.stat-card .lbl {
-  font-size: 0.73rem; font-weight: 600;
-  color: var(--text-muted); letter-spacing: 0.07em;
-  text-transform: uppercase; margin-top: 6px;
-}
-.stat-card .accent-bar {
-  width: 32px; height: 3px;
-  background: var(--gold); border-radius: 2px;
-  margin: 8px auto 0;
-}
 
 /* ── ZERO BADGE ── */
 .zero-badge {
@@ -386,6 +356,135 @@ nav a.active {
   display: inline-block; background: var(--navy); color: #C8DEFF;
   font-size: 0.72rem; font-weight: 700;
   padding: 3px 9px; border-radius: 20px; letter-spacing: 0.04em;
+}
+
+/* ── SECTION DIVIDER ── */
+.section-divider {
+  display: flex; align-items: center; gap: 14px;
+  margin: 2.5rem 0 0.75rem;
+}
+.section-divider-line {
+  flex: 1; height: 2px;
+  background: linear-gradient(90deg, var(--border-soft), var(--border));
+  border-radius: 2px;
+}
+.section-divider-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--navy); letter-spacing: 0.06em;
+  text-transform: uppercase; white-space: nowrap;
+  padding: 4px 14px; background: var(--gold-pale);
+  border: 1px solid #FCD34D; border-radius: 20px;
+}
+.risk-intro {
+  color: var(--text-muted); font-size: 0.9rem;
+  line-height: 1.7; margin-bottom: 1.5rem;
+}
+
+/* ── RISK CARDS ── */
+.risk-card {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.risk-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.risk-card-header.prod  { background: linear-gradient(135deg, #1D3A5F, #163A6B); }
+.risk-card-header.gas   { background: linear-gradient(135deg, #7F1D1D, #991B1B); }
+.risk-card-header.lab   { background: linear-gradient(135deg, #1e3a5f, #1D6FA4); }
+.risk-card-header.clinic{ background: linear-gradient(135deg, #14532D, #166534); }
+
+.risk-loc-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem; font-weight: 800;
+  color: #fff; letter-spacing: 0.05em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+}
+.risk-level {
+  font-size: 0.72rem; font-weight: 700;
+  padding: 3px 12px; border-radius: 20px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.risk-level.critical { background: #FEE2E2; color: #991B1B; }
+.risk-level.high     { background: #FEF3C7; color: #92400E; }
+.risk-level.medium   { background: #DBEAFE; color: #1E40AF; }
+
+.risk-card-body {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.risk-col {
+  padding: 22px 24px;
+}
+.risk-col:first-child {
+  border-right: 1px solid var(--border-soft);
+  background: #FFF8F8;
+}
+.risk-col:last-child {
+  background: #F6FEF9;
+}
+
+.risk-section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 14px; padding-bottom: 8px;
+  border-bottom: 2px solid currentColor;
+  display: flex; align-items: center; gap: 6px;
+}
+.risk-section-title.danger { color: #B91C1C; border-color: #FCA5A5; }
+.risk-section-title.safe   { color: #15803D; border-color: #86EFAC; }
+
+/* Hazard items */
+.risk-hazard-list { display: flex; flex-direction: column; gap: 14px; }
+.hazard-item {
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.hazard-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 5px;
+}
+.hazard-dot.red    { background: #EF4444; box-shadow: 0 0 0 3px #FEE2E2; }
+.hazard-dot.orange { background: #F97316; box-shadow: 0 0 0 3px #FFEDD5; }
+.hazard-dot.yellow { background: #EAB308; box-shadow: 0 0 0 3px #FEF9C3; }
+
+.hazard-item strong {
+  display: block; font-size: 0.88rem;
+  color: var(--navy); margin-bottom: 4px;
+}
+.hazard-item p {
+  font-size: 0.81rem; color: var(--text-muted); line-height: 1.6;
+}
+
+/* Prevention items */
+.prevention-list { display: flex; flex-direction: column; gap: 12px; }
+.prevention-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: #fff; border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--green);
+  border-radius: var(--radius); padding: 10px 12px;
+  font-size: 0.81rem; color: var(--text-mid); line-height: 1.55;
+  transition: box-shadow .18s;
+}
+.prevention-item:hover { box-shadow: var(--shadow-sm); }
+.prevention-item strong { color: var(--navy); }
+.prev-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; flex-shrink: 0;
+  background: var(--navy); color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem; font-weight: 700;
+  border-radius: 4px; margin-top: 1px;
+  letter-spacing: 0;
+}
+.rc-icon {
+  width: 16px; height: 16px; flex-shrink: 0; opacity: 0.85;
 }
 
 /* ── LAW LIST ── */
